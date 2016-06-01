@@ -1,0 +1,113 @@
+! xrdb -load ~/.xdefaults - загрузка конфига для терминала
+
+URxvt.perl-ext-common:  default,tabbedex,matcher,clipboard,keyboard-select
+URxvt.perl-lib:         $HOME/.config/urxvt/perl/
+
+Xcursor.theme: ComixCursors-Slim-White
+Xcursor.size:  32
+
+URxvt*iconFile: /usr/share/icons/Faenza/apps/16/terminal.xpm
+
+URxvt*scrollBar:   false
+URxvt.buffered:         true
+URxvt.url-launcher:      /usr/bin/chromium
+URxvt.matcher.button:   1
+URxvt.urgentOnBell: true
+URxvt*saveLines: 5000
+URxvt.visualBell: false
+URxvt.cursorBlink: true
+URxvt.geometry: 98x30
+!URxvt.transparent: true
+!urxvt.shading: 30
+
+yeahconsole*term: urxvt
+yeahconsole*restart: 1
+yeahconsole*toggleKey:None+grave
+yeahconsole*keyFull:None+F11
+yeahconsole*keySmaller:Control+m
+yeahconsole*keyBigger:Control+n
+yeahconsole*aniDelay: 10
+!yeahconsole*foreground: rgb:d6/d6/d6 
+!yeahconsole*background: rgb:1a/1a/1a 
+yeahconsole*xOffset: 0
+yeahconsole*screenWidth:1280
+yeahconsole*consoleHeight:35
+
+!yeahconsole*transparent: true
+!yeahconsole*shading: 10
+
+yeahconsole*saveLines:5000
+yeahconsole*internalBorder:0
+yeahconsole*externalBorder:1
+
+URxvt.depth: 32 
+
+URxvt.tabbed.tabbar-fg: 7
+URxvt.tabbed.tabbar-bg: 0
+URxvt.tabbed.tab-fg:    15
+URxvt.tabbed.tab-bg:    12
+
+
+urxvt*font: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+XTerm*faceName: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+
+urxvt*boldFont: 
+urxvt*italicFont: 
+urxvt*bolditalicFont: 
+
+urxvt*letterSpace: 0
+urxvt*lineSpace: -1
+
+
+*.foreground:   #c5c8c6
+*.background:   #1d1f21
+*.cursorColor:  #c5c8c6
+
+ black
+ *.color0:       #1d1f21
+ *.color8:       #969896
+
+ ! red
+ *.color1:       #cc6666
+ *.color9:       #cc6666
+
+ ! green
+ *.color2:       #b5bd68
+ *.color10:      #b5bd68
+
+ ! yellow
+ *.color3:       #f0c674
+ *.color11:      #f0c674
+
+ ! blue
+ *.color4:       #81a2be
+ *.color12:      #81a2be
+
+ ! magenta
+ *.color5:       #b294bb
+ *.color13:      #b294bb
+
+ ! cyan
+ *.color6:       #8abeb7
+ *.color14:      #8abeb7
+
+ ! white
+ *.color7:       #c5c8c6
+ *.color15:      #ffffff
+
+URxvt.colorIT:  #719611
+URxvt.colorBD:  #d3d3d3
+URxvt.colorUL:  #528b8b
+
+! clipboard
+urxvt.keysym.M-Escape: perl:keyboard-select:activate
+urxvt.keysym.M-c:   perl:clipboard:copy
+urxvt.keysym.C-v:   perl:clipboard:paste
+urxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+urxvt.clipboard.copycmd:  xsel -ib
+urxvt.clipboard.pastecmd: xsel -ob
+
+! misc
+urxvt.saveLines: 9999
+urxvt.iso14755: false
+!URxvt*altSendsEscape: true

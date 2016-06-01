@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+	<menu id="terminal-menu" label="Terminal">
+		<item label="Gnome-terminal">
+			<action name="Execute">
+				<execute>gnome-terminal</execute>
+			</action>
+		</item>
+		<item label="urxvtc">
+			<action name="Execute">
+				<execute>/sbin/urxvtc</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="chat-menu" label="Chat">
+		<item label="Skype">
+			<action name="Execute">
+				<execute>skype</execute>
+			</action>
+		</item>
+		<item label="Pidgin">
+			<action name="Execute">
+				<execute>pidgin</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-editors-menu" label="Editors">
+		<item label="Sublime-text">
+			<action name="Execute">
+				<execute>subl</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-net-menu" label="Internet">
+		<item label="Google Chrome">
+			<action name="Execute">
+				<execute>/sbin/chromium</execute>
+			</action>
+		</item>
+		<item label="Transmission">
+			<action name="Execute">
+				<execute>transmission-gtk</execute>
+			</action>
+		</item>
+		<item label="wavemon">
+			<action name="Execute">
+				<execute>urxvt -e sudo wavemon</execute>
+			</action>
+		</item>
+		<item label="iwScanner (gksu)">
+			<action name="Execute">
+				<execute>iwscanner</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-office-menu" label="Office">
+		<item label="OpenOffice Calc">
+			<action name="Execute">
+				<command>/sbin/libreoffice -calc</command>
+			</action>
+		</item>
+		<item label="OpenOffice Writer">
+			<action name="Execute">
+				<command>/sbin/libreoffice -writer</command>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-multimedia-menu" label="Multimedia">
+		<item label="VLC">
+			<action name="Execute">
+				<execute>vlc</execute>
+			</action>
+		</item>
+		<item label="Rhythmbox">
+			<action name="Execute">
+				<execute>rhythmbox</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-fileman-menu" label="File Managers">
+		<item label="PCMan File Manager">
+			<action name="Execute">
+				<command>pcmanfm</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+	</menu>
+	<menu id="apps-graphics-menu" label="Graphics">
+		<item label="Document Viewer">
+			<action name="Execute">
+				<execute>evince</execute>
+			</action>
+		</item>
+		<item label="Gimp">
+			<action name="Execute">
+				<execute>gimp</execute>
+			</action>
+		</item>
+	</menu>
+	<menu id="system-menu" label="System">
+		<item label="htop">
+			<action name="Execute">
+				<execute>urxvtc -e htop</execute>
+			</action>
+		</item>
+		<item label="Wicd-gtk">
+			<action name="Execute">
+				<execute>/sbin/wicd-gtk</execute>
+			</action>
+		</item>
+		<item label="Pulse mixer">
+			<action name="Execute">
+				<execute>pavucontrol</execute>
+			</action>
+		</item>
+		<item label="Wallpaper">
+			<action name="Execute">
+				<execute>nitrogen</execute>
+			</action>
+		</item>
+		<item label="obkey">
+			<action name="Execute">
+				<execute>obkey</execute>
+			</action>
+		</item>
+		<item label="LXAppearance">
+			<action name="Execute">
+				<execute>lxappearance</execute>
+			</action>
+		</item>
+		<item label="Openbox menu">
+			<action name="Execute">
+				<execute>obmenu</execute>
+			</action>
+		</item>
+		<item label="Openbox Configuration Manager">
+			<action name="Execute">
+				<command>obconf</command>
+				<startupnotify>
+					<enabled>yes</enabled>
+				</startupnotify>
+			</action>
+		</item>
+		<separator/>
+		<item label="Reconfigure Openbox">
+			<action name="Reconfigure"/>
+		</item>
+	</menu>
+	<menu id="root-menu" label="Openbox 3">
+		<item label="Terminal">
+			<action name="Execute">
+				<execute>/sbin/urxvt</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="terminal-menu"/>
+		<menu id="chat-menu"/>
+		<menu id="apps-editors-menu"/>
+		<menu id="apps-graphics-menu"/>
+		<menu id="apps-net-menu"/>
+		<menu id="apps-office-menu"/>
+		<menu id="apps-multimedia-menu"/>
+		<menu id="apps-fileman-menu"/>
+		<menu id="system-menu"/>
+		<separator/>
+		<item label="Log Out">
+			<action name="Exit">
+				<prompt>yes</prompt>
+			</action>
+		</item>
+		<item label="Restart">
+			<action name="Restart">
+				<execute>reboot</execute>
+			</action>
+		</item>
+		<item label="Shutdown">
+			<action name="Execute">
+				<execute>poweroff</execute>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>

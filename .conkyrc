@@ -1,0 +1,73 @@
+double_buffer yes
+
+#own window to run simultanious 2 or more conkys
+own_window yes
+own_window_transparent no
+own_window_type desktop 
+own_window_title conky
+own_window_class conky 
+# normal, desktop, dock, panel or override
+#own_window_hints undecorate,sticky,skip_taskbar,skip_pager 
+
+#borders
+draw_borders no
+border_margin 0
+
+#shades
+draw_shades no
+
+#position
+gap_x 0
+gap_y 3 
+alignment top_middle
+
+#behaviour
+update_interval 1
+
+#colour 262729 1c1d19 8f8f8f
+default_color  8f8f8f
+#default_shade_color 333333
+own_window_colour 2a2a2a
+
+color1 005391
+color2 777777
+color3 FFFFFF
+color4 CCCCCC
+color5 777777
+
+#font
+use_xft yes
+xftfont Droid Sans:size=8
+
+override_utf8_locale yes
+
+#to prevent window from moving
+use_spacer none
+minimum_size 1980 0
+#minimum_size 1257 0
+
+#${execi 300 ~/.config/conky/weather.sh "ASI|RU|RS073|SAINT+PETERSBURG"}
+#${color2}Mail:  ${color3}${execpi 300 python ~/.config/conky/conky/gmail.py}${color5}  | \
+#${tcp_portmon 22 22 count } on SSH	${tcp_portmon 22 22 rip 0}
+
+TEXT
+${color2}       Date: ${color3}${time %a, %e %b %Y}  \
+${color2}Time: ${color3}${time %H:%M:%S}${color5}  | \
+${color2}Up: ${color3}${uptime_short}${color5}  |  \
+${color2}Cpu:  ${color3}${voffset 1}${cpugraph 8, 30 -t -l }${voffset -1}   ${execi 300 sensors | grep "Core 1" | cut -c16-17 ;}°C${color5}  |${color}  \
+${color2}Ram:  ${color3}${voffset 1}${membar 8,30}${voffset -1}   ${mem}  \
+${color2}Top:  ${color3}${top_mem name 1}${color} ${offset -22}${color5} |${color}  \
+${color2}Disk:  ${color3}${voffset}${diskiograph 8, 30}${voffset -1}  ${fs_used_perc /}%  ${hddtemp /dev/sda}°C${color5}  |${color}  \
+${if_existing /proc/net/route enp4s0}${color2}Ethernet:${color3}  \
+Up:  ${color3}${upspeedgraph enp4s0 8,40}${color}  \
+Down:  ${color3}${downspeedgraph enp4s0 8,40}${color}\
+${else}${if_existing /proc/net/route wlp5s0}${color2}WiFi:${color3}  \
+${wireless_essid wlp5s0} ${wireless_link_qual wlp5s0}%${color}  \
+Up:  ${color3}${voffset 1}${upspeedgraph wlp5s0 8,40 -t}${voffset -1}${color}  \
+Down:  ${color3}${voffset 1}${downspeedgraph wlp5s0 8,40 -t}${voffset -1}${color}\
+${else}${color3}Disconnected${endif}${endif}${color5}   |  \
+${color2}Vol:  ${color3}${exec amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == "off") { print "Master Mute" } else { print $2"%" }}'}${color5}   |  \
+${if_match ${battery_percent BAT1} >= 25}${color2}Bat:   ${color3}${battery_bar 7,30 BAT1}${color}${endif} \
+${if_match ${battery_percent BAT1} < 25}${color2}Bat:  ${color red}${battery_bar 7,30 BAT1}${color}${endif}   |   \
+${color2}Desktop:  ${color3}${desktop_name} \
+${alignc}  \

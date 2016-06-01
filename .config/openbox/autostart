@@ -1,0 +1,20 @@
+#cairo-dock -o &
+#pytyle2 &
+#compton --config ~/.compton.conf&
+#thunar --daemon &
+
+hddtemp -d /dev/sda&
+cbatticon -i notification -u 60 -l 10 -r 5 -c "systemctl suspend" &
+compton -czC -r 16 -l -24 -t -12 -G -b --shadow-exclude 'n:a:Chromium'&
+rxdb -load ~/.Xdefaults&
+preload&
+conky&
+docky&
+feh --bg-fill ~/.config/openbox/jkcDplu.jpg &
+setxkbmap -layout us,ru -variant -option grp:alt_shift_toggle,terminate:ctrl_alt_bksp,grp_led:caps &
+urxvtd -q -f -o &
+yeahconsole&
+#(sleep 3 && transset-df  -i $(xwininfo -root -tree | grep yeahconsole -B 2 | head -1 | perl -p -e 's/^ *(0x.*?) .*$/$1/g') 0.9)&
+xset s off &
+xset -dpms &
+
