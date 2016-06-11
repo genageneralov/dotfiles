@@ -727,9 +727,9 @@
   </menu>
   <applications>
     <!-- xprop | grep TYPE  чтобы узнать тип окна-->
-     <application type="normal">
+    <application type="normal">
       <position force="no">
-          <x>center</x>
+        <x>center</x>
         <y>center</y>
         <monitor>1</monitor>
       </position>
@@ -739,6 +739,7 @@
       <maximized>true</maximized>
       <decor>no</decor>
     </application>
+
     <application name="urxvt">
       <decor>no</decor>
       <position force="no">
@@ -746,9 +747,25 @@
         <y>center</y>
       </position>
     </application>
+
     <application name="skype">
       <desktop>1</desktop>
     </application>
+
+    <application name="dwb">
+       <maximized>yes</maximized>
+       <decor>no</decor>
+    </application>
+
+    <application name="feh">
+       <maximized>yes</maximized>
+       <position force="no">
+        <x>center</x>
+        <y>center</y>
+       </position>
+    </application>
+    
+
     <!--
   <application name="pcmanfm">
       <decor>no</decor>
@@ -761,24 +778,6 @@
       <width>94%</width>
       <height>85%</height>
     </size>
-  </application>
- 
-  <application name="thunar">
-      <decor>no</decor>
-      <position force="no">
-          <x>40px</x>
-        <y>0px</y>
-        <monitor>1</monitor>
-      </position>
-      <size>
-      <width>94%</width>
-      <height>85%</height>
-    </size>
-  </application>
-
--->
-    <!--   <application name="transmission-gtk">
-      <decor>no</decor>
   </application>
 -->
     <!--

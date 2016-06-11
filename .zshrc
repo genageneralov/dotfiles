@@ -65,6 +65,18 @@ function chpwd() {
 
 tailc() { tail -n 40 "$1" | column -t; }
 
+# systemlevel
+ start() { sudo systemctl start $1; }
+ stop() { sudo systemctl stop $1; }
+ restart() { sudo systemctl restart $1; }
+ status() { sudo systemctl status $1; }
+ enabled() { sudo systemctl enable $1; }
+ disabled() { sudo systemctl disable $1; }
+
+ Start() { sudo systemctl start $1; sudo systemctl status $1; }
+ Stop() { sudo systemctl stop $1; sudo systemctl status $1; }
+ Restart() { sudo systemctl restart $1; sudo systemctl status $1; }
+
 # get external ip address
 function extip {
         echo $(curl -s https://whatismyip.nulltime.net)
