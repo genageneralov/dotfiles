@@ -1,4 +1,5 @@
 hddtemp -d /dev/sda&
+xmodmap ~/.Xmodmap&
 cbatticon -i notification -u 60 -l 10 -r 5 -c "systemctl suspend" &
 compton -czC -r 16 -l -24 -t -12 -G -b --shadow-exclude 'n:a:Chromium'&
 rxdb -load ~/.Xdefaults&
