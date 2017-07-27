@@ -1,4 +1,6 @@
 :imap jj <Esc>
+map <F4> :w<CR>
+imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -6,6 +8,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 let NERDTreeShowHidden=1 
 " показать NERDTree на F3
 map <F3> :NERDTreeToggle<CR>
+
+
+let g:org_plugins = ['ShowHide', '|', 'Navigator', 'EditStructure', 'YourPlugin']
+filetype plugin indent on  
+execute pathogen#infect()
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -15,15 +22,6 @@ set undofile
 set undodir=~/.vim/undo/
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-"let g:airline_left_sep = '▶'
-"let g:airline_right_sep = '◀'
-"let g:airline_fugitive_prefix = '⎇ '
-"let g:airline_paste_symbol = 'ρ'
-
-"let g:airline_enable_fugitive=1
-"let g:airline_enable_syntastic=1
-"let g:airline_enable_bufferline=1
 
 " Перенос длинных строк
 set wrap
@@ -115,18 +113,27 @@ set backupdir=~/.vim/backup/
 " Опции сесссий
 set sessionoptions=curdir,buffers,tabpages
 
-colo desert
+"colo desert
+set background=dark
+colorscheme hybrid
 
 set t_Co=256
 
-set nocompatible
-filetype off 
-
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme) 
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set nocompatible              " be iMproved, required
+filetype off                  " required
 set rtp+=~/.vim/bundle/vundle/
-
-call vundle#rc()
-
-filetype plugin indent on
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+"Add your bundles here
 
 "репозитории на github
 Bundle 'tpope/vim-fugitive'
@@ -135,6 +142,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'bling/vim-airline'
 Bundle 'scrooloose/nerdtree.git'
+Bundle 'mattn/emmet-vim'
+Bundle 'kien/ctrlp.vim'
 
 "репозитории vim/scripts
 Bundle 'L9'
@@ -143,3 +152,15 @@ Bundle 'rails.vim'
 
 "git репозитории (не на github)
 Bundle 'git://git.wincent.com/command-t.git'
+
+"...All your other bundles...
+if iCanHazVundle == 0
+    echo "Installing Vundles, please ignore key map error messages"
+    echo ""
+    :PluginInstall
+endif
+
+call vundle#end() 
+"must be last
+filetype plugin indent on " load filetype plugins/indent settings
+
