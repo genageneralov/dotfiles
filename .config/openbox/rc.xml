@@ -289,7 +289,7 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="W-t">
+    <keybind key="A-t">
       <action name="Execute">
         <command>urxvtc</command>
         <startupnotify>
@@ -300,7 +300,7 @@
     </keybind>
     <keybind key="Print">
       <action name="execute">
-        <command>scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshot/'</command>
+          <command>scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f /media/d/Dropbox/Screenshot/'</command>
       </action>
     </keybind>
     <keybind key="A-F2">
