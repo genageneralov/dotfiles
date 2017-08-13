@@ -1,7 +1,11 @@
 ! xrdb -load ~/.xdefaults - загрузка конфига для терминала
 
-URxvt.perl-ext-common:  default,tabbedex,matcher,clipboard,keyboard-select
-URxvt.perl-lib:         $HOME/.config/urxvt/perl/
+URxvt.perl-ext:  default,tabbed_new
+URxvt.perl-lib:  $HOME/.config/urxvt/perl/
+
+URxvt.tabbed-open: 0x74
+URxvt.tabbed-rename: 0x6e
+URxvt.tabbed-next: 0xff09
 
 Xcursor.theme: ComixCursors-Slim-White
 Xcursor.size:  32
@@ -48,8 +52,22 @@ URxvt.tabbed.tab-fg:    15
 URxvt.tabbed.tab-bg:    12
 
 
-urxvt*font: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
-XTerm*faceName: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+URxvt.tabbed_new.tabren-bg: 3
+URxvt.tabbed_new.tabdiv-fg: 8
+URxvt.tabbed_new.tabbar-fg: 8
+URxvt.tabbed_new.tabbar-bg: 0
+URxvt.tabbed_new.tabsel-fg: 1
+URxvt.tabbed_new.tabsel-bg: 8
+URxvt.tabbed_new.tab-fg:    0
+URxvt.tabbed_new.tab-bg:    8
+
+
+
+!URxvt*font: xft:DejaVu Sans Mono:pixelsize=12
+!urxvt*font: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+urxvt*font: xft:xos4 Terminus:pixelsize=14
+!XTerm*faceName: xft:Terminus:pixelsize=14,xft:Inconsolata\ for\ Powerline:pixelsize=14
+XTerm*faceName: xft:xos4 Terminus:pixelsize=14
 
 urxvt*boldFont: 
 urxvt*italicFont: 
@@ -59,8 +77,10 @@ urxvt*letterSpace: 0
 urxvt*lineSpace: -1
 
 
+
 *.foreground:   #c5c8c6
-*.background:   #1d1f21
+*.background:   #2a2a2a
+!*.background:   #1d1f21
 *.cursorColor:  #c5c8c6
 
  black
