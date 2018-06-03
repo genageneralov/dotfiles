@@ -1,5 +1,6 @@
 :imap jj <Esc>
-map <F4> :w<CR>
+map <F4> :q!<CR>
+map <F5> :w<CR>
 imap <expr> <tab> emmet#expandAbbrIntelligent("\<tab>")
 
 autocmd StdinReadPre * let s:std_in=1
@@ -49,14 +50,6 @@ set scrolljump=7
 " Теперь нет необходимости передвигать курсор к краю экрана, чтобы опуститься в режиме редактирования
 set scrolloff=7
 
-" Выключаем надоедливый "звонок"
-set novisualbell
-set t_vb=
-
-" Поддержка мыши
-set mouse=a
-set mousemodel=popup
-
 " Кодировка текста по умолчанию
 set termencoding=utf-8
 
@@ -64,8 +57,6 @@ set termencoding=utf-8
 " Это позволяет редактировать несколько файлов в один и тот же момент без необходимости сохранения каждый раз
 " когда переключаешься между ними
 set hidden
-" Скрыть панель в gui версии ибо она не нужна
-set guioptions-=T
 
 " Сделать строку команд высотой в одну строку
 set ch=1
@@ -74,7 +65,7 @@ set ch=1
 set langmap=Ж:,йq,цw,уe,кr,еt,нy,гu,шi,щo,зp,х[,ъ],фa,ыs,вd,аf,пg,рh,оj,лk,дl,яz,чx,сc,мv,иb,тn,ьm,ю.
 
 " Скрывать указатель мыши, когда печатаем
-set mousehide
+"set mousehide
 
 " Включить автоотступы
 set autoindent
@@ -101,19 +92,14 @@ set smartindent
 " Fix <Enter> for comment
 set fo+=cr
 
-" Отключаем создание swap файлов
-set noswapfile
-" Все swap файлы будут помещаться в заданную директорию (туда скидываются открытые буферы)
+set swapfile
 set dir=~/.vim/swap/
-" Отключаем создание бекапов (резервные копии файлов с окончанием «~» создаваться не будут)
 set backup
-" Если установлено set backup, то помещаются в этот каталог
 set backupdir=~/.vim/backup/
 
 " Опции сесссий
 set sessionoptions=curdir,buffers,tabpages
 
-"colo desert
 set background=dark
 colorscheme hybrid
 
@@ -133,7 +119,6 @@ filetype off                  " required
 set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
-"Add your bundles here
 
 "репозитории на github
 Bundle 'tpope/vim-fugitive'
@@ -153,7 +138,6 @@ Bundle 'rails.vim'
 "git репозитории (не на github)
 Bundle 'git://git.wincent.com/command-t.git'
 
-"...All your other bundles...
 if iCanHazVundle == 0
     echo "Installing Vundles, please ignore key map error messages"
     echo ""
